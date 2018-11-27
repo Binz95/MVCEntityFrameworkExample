@@ -1,0 +1,21 @@
+﻿
+@{
+    ViewBag.Title = "Create";
+}
+
+<h2>Create</h2>
+
+@using (Html.BeginForm())
+{
+    <div>
+        Name
+        @Html.TextBox("ContactName")
+    </div>
+
+    <div>
+        Location
+        @Html.TextBox("Location")
+    </div>
+    <input type="Submit"/>
+}
+

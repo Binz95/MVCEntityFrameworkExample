@@ -1,0 +1,21 @@
+﻿@model IEnumerable<EntityFrameworkEg.Models.Contact>
+@{
+    ViewBag.Title = "Home Page";
+}
+<div>
+    @Html.ActionLink("Create New","Create" ,"Home")
+</div>
+@foreach (var item in Model)
+{
+    <div>@item.ContactName</div>
+}
+
+<div>
+    <select>
+
+        @foreach (var item in Model)
+        {
+            <option>@item.ContactName</option>
+        }
+    </select>
+</div>
