@@ -5,11 +5,25 @@
 <div>
     @Html.ActionLink("Create New","Create" ,"Home")
 </div>
-@foreach (var item in Model)
-{
-    <div>@item.ContactName</div>
-}
-
+<br/>
+<table class="table">
+    <tr>
+        <th>ContactName</th>
+        <th>Location</th>
+    </tr>
+    @foreach (var item in Model)
+    {
+    <tr>
+        <td>
+            @item.ContactName
+        </td>
+        <td>
+            @item.Location
+        </td>
+        <td> @Html.ActionLink("Detail", "Detail", new { id = item.ContactId })</td>
+    </tr>
+    }
+</table>
 <div>
     <select>
 

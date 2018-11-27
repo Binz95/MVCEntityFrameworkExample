@@ -39,5 +39,13 @@ namespace EntityFrameworkEg.Controllers
             ctx.SaveChanges();
             return RedirectToAction("Index");
         }
+        public ActionResult Detail(int? id)
+        {
+            var c = ctx.Contacts.Find(id);
+            return View(c);
+           // var c = (from p in ctx.Contacts
+             //        where p.ContactId == id
+               //      select p).FirstOrDefault();
+        }
     }
 }
