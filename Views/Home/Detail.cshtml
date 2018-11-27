@@ -6,5 +6,6 @@
 
 <h2>Detail</h2>
 <div>
-    @Model.ContactName - @Model.Location
+    @Html.TextBoxFor(Bini => Bini.ContactName)
+    @Html.DisplayFor(Bini => Bini.Location)
 </div>
