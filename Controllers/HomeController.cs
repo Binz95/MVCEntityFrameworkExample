@@ -35,9 +35,13 @@ namespace EntityFrameworkEg.Controllers
         [HttpPost]
         public ActionResult Create(Contact c)
         {
-            ctx.Contacts.Add(c);
-            ctx.SaveChanges();
-            return RedirectToAction("Index");
+            if (ModelState.IsValid)
+            {
+                ctx.Contacts.Add(c);
+                ctx.SaveChanges();
+                return RedirectToAction("Index");
+            }
+            return View(c);
         }
         public ActionResult Detail(int? id)
         {
@@ -58,6 +62,21 @@ namespace EntityFrameworkEg.Controllers
         {
             var c = ctx.Contacts.Find(id);
             ctx.Contacts.Remove(c);
+            ctx.SaveChanges();
+            return RedirectToAction("Index");
+        }
+        public ActionResult Edit(int? id)
+        {
+            var c = ctx.Contacts.Find(id);
+            return View(c);
+        }
+        [HttpPost]
+        
+        public ActionResult Edit(Contact co)
+        {
+            var c = ctx.Contacts.Find(co.ContactId);
+            c.ContactName = co.ContactName;
+            c.Location = co.Location;
             ctx.SaveChanges();
             return RedirectToAction("Index");
         }

@@ -17,7 +17,9 @@ namespace EntityFrameworkEg.Models
     {
         public int ContactId { get; set; } 
         [Display(Name = "ContactName")]
+        [Required, MaxLength(40, ErrorMessage ="Value should not exceed 40 characters")]
         public string ContactName { get; set; }
+        [Required, MaxLength(40)]
         public string Location { get; set; }
     }
 }

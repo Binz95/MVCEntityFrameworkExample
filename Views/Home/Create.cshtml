@@ -4,18 +4,27 @@
 }
 
 <h2>Create</h2>
+<div>
+    @using (Html.BeginForm())
+    {
+        <div class="col-md-8">
+            @Html.DisplayNameFor(model => model.ContactName)
+            <div class="form-group">
+                @Html.TextBox("ContactName")
+                @Html.ValidationMessageFor(model => model.ContactName, "", new { @class = "text-danger" })
+            </div>
 
-@using (Html.BeginForm())
-{
-    <div>
-        @Html.DisplayNameFor(model => model.ContactName)
-        @Html.TextBox("ContactName")
-    </div>
+        </div>
 
-    <div>
-        @Html.DisplayNameFor(model => model.Location)
-        @Html.TextBox("Location")
-    </div>
-    <input type="Submit" />
-}
+        <div class="col-md-8">
+            @Html.DisplayNameFor(model => model.Location)
+            <div class="form-group">
+                @Html.TextBox("Location")
+                @Html.ValidationMessageFor(model => Model.Location, "", new { @class = "text-danger" })
+            </div>
+            <input type="Submit" value="Save" />
+        </div>
+
+    }
+</div>
 

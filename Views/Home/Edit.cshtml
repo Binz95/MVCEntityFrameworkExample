@@ -1,0 +1,22 @@
+﻿@model EntityFrameworkEg.Models.Contact
+@{
+    ViewBag.Title = "Edit";
+}
+
+<h2>Edit</h2>
+
+@using (Html.BeginForm())
+{
+    @Html.HiddenFor(model=>model.ContactId)
+
+    <div>
+        @Html.DisplayNameFor(model => model.ContactName)
+        @Html.TextBox("ContactName")
+    </div>
+
+    <div>
+        @Html.DisplayNameFor(model => model.Location)
+        @Html.TextBox("Location")
+    </div>
+    <input type="Submit" value= "Update"/>
+}
