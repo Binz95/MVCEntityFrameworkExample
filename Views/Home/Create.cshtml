@@ -1,4 +1,4 @@
-﻿
+﻿@model EntityFrameworkEg.Models.Contact
 @{
     ViewBag.Title = "Create";
 }
@@ -8,14 +8,14 @@
 @using (Html.BeginForm())
 {
     <div>
-        Name
+        @Html.DisplayNameFor(model => model.ContactName)
         @Html.TextBox("ContactName")
     </div>
 
     <div>
-        Location
+        @Html.DisplayNameFor(model => model.Location)
         @Html.TextBox("Location")
     </div>
-    <input type="Submit"/>
+    <input type="Submit" />
 }
 

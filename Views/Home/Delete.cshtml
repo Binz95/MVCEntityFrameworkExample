@@ -1,0 +1,18 @@
+﻿@model EntityFrameworkEg.Models.Contact
+@{
+    /**/
+
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+@using (Html.BeginForm())
+{
+<div>
+    @Html.DisplayNameFor(Bini => Bini.ContactName)
+    @Html.TextBoxFor(Bini => Bini.ContactName)
+    @Html.DisplayFor(Bini => Bini.Location)
+</div>
+    <div>Sure you want to delete?</div>
+    <input type="submit" value="Delete" />
+}

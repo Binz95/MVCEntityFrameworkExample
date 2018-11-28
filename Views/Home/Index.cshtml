@@ -8,8 +8,8 @@
 <br/>
 <table class="table">
     <tr>
-        <th>ContactName</th>
-        <th>Location</th>
+        <th> @Html.DisplayNameFor(model => model.ContactName)</th>
+        <th>@Html.DisplayNameFor(model => model.Location)</th>
     </tr>
     @foreach (var item in Model)
     {
@@ -21,6 +21,7 @@
             @item.Location
         </td>
         <td> @Html.ActionLink("Detail", "Detail", new { id = item.ContactId })</td>
+        <td> @Html.ActionLink("Delete", "Delete", new { id = item.ContactId })</td>
     </tr>
     }
 </table>

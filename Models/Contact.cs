@@ -11,10 +11,12 @@ namespace EntityFrameworkEg.Models
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.ComponentModel.DataAnnotations;
+
     public partial class Contact
     {
-        public int ContactId { get; set; }
+        public int ContactId { get; set; } 
+        [Display(Name = "ContactName")]
         public string ContactName { get; set; }
         public string Location { get; set; }
     }

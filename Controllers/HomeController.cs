@@ -47,5 +47,20 @@ namespace EntityFrameworkEg.Controllers
              //        where p.ContactId == id
                //      select p).FirstOrDefault();
         }
+        public ActionResult Delete(int? id)
+        {
+            var c = ctx.Contacts.Find(id);
+            return View(c);
+        }
+        [HttpPost]
+        [ActionName("Delete")]
+        public ActionResult DeleteContact(int? id)
+        {
+            var c = ctx.Contacts.Find(id);
+            ctx.Contacts.Remove(c);
+            ctx.SaveChanges();
+            return RedirectToAction("Index");
+        }
+
     }
 }
